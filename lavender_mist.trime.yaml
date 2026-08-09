@@ -6,7 +6,7 @@
 # encoding: utf-8
 
 config_version: "3.0"
-name: lavender_mist.trime       #方案名称
+name: lavender_mist       #方案名称
 author: Chh    #作者信息
 
 #键盘高度
