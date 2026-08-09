@@ -10,4 +10,4 @@
 本项目代码由Deepseek开发
 ### Skill说明
 1. 本项目提供AI自动生成的Skill，可以自行调用让AI自动为您生成主题，但**不保证**适用每一位用户，请自行调试
-2. 建议搭配https://lanlanderui.github.io/trime-theme-studio/使用，可以直观的调试。
+2. 建议搭配[Trime主题工坊](https://lanlanderui.github.io/trime-theme-studio/)使用，可以直观的调试。
