@@ -6,7 +6,7 @@
 # encoding: utf-8
 
 config_version: "3.0"
-name: misty_blue.trime        #方案名称
+name: misty_blue        #方案名称
 author: Chh    #作者信息
 
 #键盘高度
