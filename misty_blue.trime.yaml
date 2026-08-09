@@ -1,0 +1,524 @@
+# SPDX-FileCopyrightText: 2015 - 2024 Rime community
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Trime custom style settings
+# encoding: utf-8
+
+config_version: "3.0"
+name: misty_blue.trime        #方案名称
+author: Chh    #作者信息
+
+#键盘高度
+height:
+  1: &jpgd1 30 #表情键盘
+  2: &jpgd2 24 #颜文字键盘1
+  3: &jpgd3 24 #颜文字键盘2
+  4: &jpgd4 48 #主键盘
+  5: &jpgd5 39.5 #符号键盘
+  6: &hgap 4 #键盘横缝大小
+  7: &sgap 12 #键盘竖缝大小
+
+#圆角
+round_corner:
+  1: &round1 6 #按键圆角半径
+  2: &round2 0 #候选窗口圆角
+  3: &round3 12 #回车键圆角
+
+#界面风格、功能开关
+style:
+  auto_caps: false #自動句首大寫:true|false
+  candidate_font: han.ttf  #候选字体
+  candidate_padding: 5  #候选项内边距
+  candidate_spacing: 0.0  #候选分割线
+  candidate_text_size: 23  #候选字号
+  candidate_text_vertical_bias: 1.0 #候选文本垂直偏移位置（仅 overlay 模式使用，需要间隙空间足够，范围 0.0~1.0，0.0=top，0.5=center，1.0=bottom）
+  candidate_view_height: 28 #候选区高度
+  comment_font: comment.ttf #编码提示字体
+  comment_height: 12 #编码提示区高度（仅 top 模式约束高度，其余模式与 candidate_view_height 无区别）
+  comment_position: right #编码提示布局位置：right / top / overlay
+  comment_vertical_bias: 0.0 #编码提示垂直偏移位置（仅 overlay 模式使用，需要间隙空间足够，范围 0.0~1.0，0.0=top，0.5=center，1.0=bottom）
+  comment_text_size: 10 #编码提示字号
+  hanb_font: hanb.ttf #扩充字体
+  horizontal_gap: *hgap #键水平间距
+  key_font: symbol.ttf #键盘字体
+  key_height: *jpgd4 #键高
+  key_long_text_size: 16 #长标签字号
+  key_text_size: 24 #键字号
+  key_width: 10.0 #键宽，占屏幕宽的百分比
+  label_text_size: 18 #标签字号
+  label_font: label.ttf #编标签字体
+  latin_font: latin.ttf #西文本体
+  keyboard_height: 225 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  popup_font: latin.ttf #按键提示字体
+  popup_width: 38 #按键提示宽度
+  popup_height: 48 #按键提示高度
+  popup_bottom_margin: 68 #按键提示底边距
+  popup_key_height: 48 #按键提示内键高度
+  popup_text_size: 23 #按键提示字号
+  reset_ascii_mode_on_focus_change: false #焦点变更弹起输入法软键盘时，重置 ascii_mode
+  round_corner: *round1 #按键圆角半径
+  shadow_radius: 0.0 #按键阴影半径（TRIME不支持按键阴影，保留参数占位）
+  symbol_font: symbol.ttf #符号字体
+  symbol_text_size: 10 #符号字号
+  text_font: latin.ttf #编码字体
+  vertical_gap: *sgap #键盘行距
+  enter_label_mode: 0  #是否使用App提供的ActionLabel内容作为Enter键的文本（由于多数App没有适配ActionLable，实际影响不大）。0不使用，1只使用actionlabel，2优先使用，3当其他方式没有获得label时才读取actionlabel
+  enter_labels:  # 定义Enter键的文本
+    go: 前往
+    done: 完成
+    next: 下个
+    pre:  上个
+    search: 搜索
+    send: 发送
+    default: Enter   # 定义默认Enter键的文本
+
+preedit:                    # 预编辑文本视图参数
+  horizontal_padding: 8     # 横向内边距（整数）
+  #  alpha: 0.8             # 透明度（0-1，浮点）
+  top_end_radius: 4         # 末上端圆角（浮点）
+  foreground:               # 前景样式
+    font_size: 16           # 预编辑字体大小（浮点）
+
+window:                     # 候选窗口（悬浮窗）参数
+  insets:                   # 窗口内边距
+    vertical: 4             # 纵向内边距（整数）
+    horizontal: 4           # 横向内边距（整数）
+  item_padding:             # 候选项内边距
+    #  vertical: 0          # 纵向内边距（整数）
+    horizontal: 4           # 横向内边距（整数）
+    #  min_width: 0         # 最小宽度（整数）
+    #  corner_radius: 0     # 圆角半径（浮点）
+    #  border: 0            # 边框宽度（整数）
+    #  shadow: 0.0          # 阴影半径（浮点）
+    #  alpha: 1             # 透明度（0-1，浮点）
+  foreground:               # 前景样式
+    label_font_size: 20     # 序号字体大小（浮点）
+    text_font_size: 20      # 文字字体大小（浮点）
+    comment_font_size: 16   # 注释字体大小（浮点）
+
+# 最好保留一项，防止其他主题使用 __include 时无法加载
+fallback_colors:
+  candidate_text_color: text_color
+
+#颜色
+colors:
+  1: &color1 0xff000000
+  2: &color2 0xffffffff
+  3: &color3 0xffe1e3e7
+  4: &color4 0xffacb2c2
+  5: &color5 0xff131313
+  6: &color6 0xff3266a0
+  7: &color7 0x00
+  8: &color8 0xff838383
+
+#配色方案
+preset_color_schemes:
+  MISTY_BLUE:
+    name: MISTY_BLUE／雾蓝白
+    author: TRIME Theme
+    dark_scheme: MISTY_BLUE_DARK
+    text_color: 0xff445566
+    back_color: 0xffF2F4F7
+    text_back_color: 0xffF2F4F7
+    border_color: 0xffE4E9EE
+    candidate_separator_color: 0x00000000
+    candidate_text_color: 0xff445566
+    comment_text_color: 0xff8FA0B0
+    label_color: 0xff8FA0B0
+    hilited_text_color: 0xff8BA0B8
+    hilited_back_color: 0x00000000
+    hilited_candidate_text_color: 0xffFFFFFF
+    hilited_candidate_back_color: 0xff8BA0B8
+    hilited_comment_text_color: 0xffFFFFFF
+    hilited_key_back_color: 0xff8BA0B8
+    hilited_key_text_color: 0xffFFFFFF
+    hilited_key_symbol_color: 0xffFFFFFF
+    hilited_off_key_back_color: 0xffF8F9FB
+    hilited_off_key_text_color: 0xff445566
+    key_back_color: 0xffF8F9FB
+    key_text_color: 0xff445566
+    key_symbol_color: 0xff8FA0B0
+    keyboard_back_color: 0xffE4E9EE
+    off_key_back_color: 0xffF8F9FB
+    off_key_text_color: 0xff445566
+    preview_back_color: 0xff445566
+    preview_text_color: 0xffFFFFFF
+    shadow_color: 0x00000000
+    bgn: 0xffF8F9FB
+    tgn: 0xff445566
+    benter: 0xff8BA0B8
+    tenter: 0xffFFFFFF
+    bkg: 0xffF8F9FB
+    tkg: 0xff445566
+    baoe: 0xff8BA0B8
+    taoe: 0xffFFFFFF
+    bbs: 0xffF2F4F7
+    tbs: 0xff445566
+    bh1: 0xffF8F9FB
+    th1: 0xff445566
+    bh2: 0xffF8F9FB
+    th2: 0xff445566
+    bh3: 0xffF8F9FB
+    th3: 0xff445566
+    bh4: 0xffF8F9FB
+    th4: 0xff445566
+
+  MISTY_BLUE_DARK:
+    name: MISTY_BLUE_DARK／雾蓝黑
+    author: TRIME Theme
+    text_color: 0xffCFD8E0
+    back_color: 0xff2A3038
+    text_back_color: 0xff2A3038
+    border_color: 0xff3D4550
+    candidate_separator_color: 0x00000000
+    candidate_text_color: 0xffCFD8E0
+    comment_text_color: 0xff8FA0B0
+    label_color: 0xff8FA0B0
+    hilited_text_color: 0xff95ADC2
+    hilited_back_color: 0x00000000
+    hilited_candidate_text_color: 0xffFFFFFF
+    hilited_candidate_back_color: 0xff95ADC2
+    hilited_comment_text_color: 0xffFFFFFF
+    hilited_key_back_color: 0xff95ADC2
+    hilited_key_text_color: 0xffFFFFFF
+    hilited_key_symbol_color: 0xffFFFFFF
+    hilited_off_key_back_color: 0xff3D4550
+    hilited_off_key_text_color: 0xffCFD8E0
+    key_back_color: 0xff3A4148
+    key_text_color: 0xffCFD8E0
+    key_symbol_color: 0xff8FA0B0
+    keyboard_back_color: 0xff1F242A
+    off_key_back_color: 0xff3A4148
+    off_key_text_color: 0xffCFD8E0
+    preview_back_color: 0xffCFD8E0
+    preview_text_color: 0xff2A3038
+    shadow_color: 0x00000000
+    bgn: 0xff3A4148
+    tgn: 0xffCFD8E0
+    benter: 0xff95ADC2
+    tenter: 0xffFFFFFF
+    bkg: 0xff3A4148
+    tkg: 0xffCFD8E0
+    baoe: 0xff95ADC2
+    taoe: 0xffFFFFFF
+    bbs: 0xff2A3038
+    tbs: 0xffCFD8E0
+    bh1: 0xff3A4148
+    th1: 0xffCFD8E0
+    bh2: 0xff3A4148
+    th2: 0xffCFD8E0
+    bh3: 0xff3A4148
+    th3: 0xffCFD8E0
+    bh4: 0xff3A4148
+    th4: 0xffCFD8E0
+
+
+#---------配色结束---------#
+
+liquid_keyboard:
+  # 目前只能直接写参数，不支持变量或者fallback机制。
+  # 缺少参数时，自动从style中加载参数。除非需要指定liquid_keyboard使用与主键盘不同的背景色、背景图，否则不应设置被注释掉的参数。
+  author: "Chh"
+  row: 6              #每屏最多显示多少行按键
+  row_land: 5         #横屏每屏最多显示多少行按键
+  key_height: 40      #按键高度
+  key_height_land: 40 #横屏模式按键高度
+  single_width: 60    #single类型的按键宽度
+  vertical_gap: 8     #纵向按键间隙
+  margin_x: 5       #左右按键间隙的1/2
+  fixed_key_bar: # 固定按键条
+    position: bottom  # 摆放位置（在滚动区域的……） top|bottom|left|right
+    keys: # 按键（显示名称为对应的label，不能放太多）
+      - liquid_keyboard_exit
+      - space1
+      - BackSpace
+      - Return2
+      - clipboard_window
+      - liquid_keyboard_tabs
+  keyboards: [ascii, cn, list, unit, math, tabs, emoji_smiley, emoji_gesture, emoji_people, emoji_symbol, emoji_heart, emoji_plant, emoji_animal, emoji_food, emoji_travel]  #tab列表
+  tabs:
+    name: 更多
+    type: TABS
+  emoji_smiley:     #笑脸
+    type: SINGLE
+    name: 笑脸
+    keys: "😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗☺😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😏😒🙄😬🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵🤯🤠🥳😎🤓🧐😕😟🙁☹😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫😤😡😠🤬😈👿💀☠💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾"
+  emoji_gesture:    #手势
+    type: SINGLE
+    name: 手势
+    keys: "👍👎👌🤌🤏✌🤞🤟🤘🤙👈👉👆🖕👇☝✋🤚🖐🖖👋✊👊🤛🤜👏🙌👐🤲🤝🙏✍💅🤳💪🦾🦵🦶👂🦻👃🧠🫀🫁🦷🦴👀👁👅👄"
+  emoji_people:     #人物
+    type: SINGLE
+    name: 人物
+    keys: "👶🧒👦👧🧑👱👨🧔👩🧓👴👵🙍🙎🙅🙆💁🙋🧏🙇🤦🤷👮🕵💂👷🤴👸👳👲🧕🤵👰🤰🤱👼🎅🤶🦸🦹🧙🧚🧛🧜🧝🧞🧟🧌💆💇🚶🧍🧎🏃💃🕺🕴👯🧖🧗🤺🏇⛷🏂🏌🏄🚣🏊⛹🏋🚴🚵🤸🤼🤽🤾🤹🧘🛀🛌👭👫👬💏💑👪🗣👤👥🫂👣"
+  emoji_heart:      #爱心
+    type: SINGLE
+    name: 爱心
+    keys: "❤🧡💛💚💙💜🤎🖤🤍💌💘💝💖💗💓💞💕💟❣💔💋💯💢💥💫💦💨🕳💬🗨🗯💭💤"
+  emoji_plant:      #植物
+    type: SINGLE
+    name: 植物
+    keys: "🌱🌲🌳🌴🌵🌾🌿☘🍀🍁🍂🍃🌸💮🏵🌹🥀🌺🌻🌼🌷💐🍄🍇🍈🍉🍊🍋🍌🍍🥭🍎🍏🍐🍑🍒🍓🥝🍅🥥🥑🌰"
+  emoji_animal:     #动物
+    type: SINGLE
+    name: 动物
+    keys: "🐵🐒🦍🦧🐶🐕🦮🐩🐺🦊🦝🐱🐈🦁🐯🐅🐆🐴🐎🦄🦓🦌🐮🐂🐃🐄🐷🐖🐗🐽🐏🐑🐐🐪🐫🦙🦒🐘🦣🦏🦛🐭🐁🐀🐹🐰🐇🐿🦫🦔🦇🐻🐨🐼🦥🦦🦨🦘🦡🐾🦃🐔🐓🐣🐤🐥🐦🐧🕊🦅🦆🦢🦉🦩🦚🦜🐸🐊🐢🦎🐍🐲🐉🦕🦖🐳🐋🐬🐟🐠🐡🦈🐙🐚🐌🦋🐛🐜🐝🐞🦗🕷🕸🦂🦟🪰🦠"
+  emoji_food:       #食物
+    type: SINGLE
+    name: 食物
+    keys: "🍆🥔🥕🌽🌶🥒🥬🥦🧄🧅🥜🍞🥐🥖🥨🥯🥞🧇🧀🍖🍗🥩🥓🍔🍟🍕🌭🥪🌮🌯🥙🧆🥚🍳🥘🍲🥣🥗🍿🧈🧂🥫🍱🍘🍙🍛🍜🍝🍠🍢🍣🍤🍥🥮🍡🥟🥠🥡🦀🦞🦐🦑🦪🍦🍧🍨🍩🍪🎂🍰🧁🥧🍫🍬🍭🍮🍯🍼🥛☕🍵🍶🍾🍷🍸🍹🍺🍻🥂🥃🥤🧃🧉🧊🥢"
+  emoji_travel:     #旅行
+    type: SINGLE
+    name: 旅行
+    keys: "🚗🚕🚙🚌🚎🏎🚓🚑🚒🚐🚚🚛🚜🏍🛵🚲🛴🛹🚏🛣🛤⛽🚨🚥🚦🛑🚧⚓⛵🛶🚤🛳⛴🛥🚢✈🛩🛫🛬🪂💺🚁🚟🚠🚡🛰🚀🛸🗺🗾🏔⛰🌋🗻🏕🏖🏜🏝🏞🏟🏛🏗🏘🏚🏠🏡🏢🏣🏤🏥🏦🏨🏩🏪🏫🏬🏭🏯🏰💒🗼🗽⛪🕌🛕🕍⛩🕋⛲⛺🌁🌃🏙🌄🌅🌆🌇🌉♨🎠🎡🎢💈🎪🗿🚽🚿🛁🧹🧺🧻🧼🧽🧯🛒🚬"
+  emoji_symbol:     #符号
+    type: SINGLE
+    name: 符号
+    keys: "♠♥♦♣🃏🀄🎴🔤🔡🔠🔢🔣🔇🔈🔉🔊📢📣📯🔔🔕🎼🎵🎶🎙🎚🎛🎤🎧📻🎷🎸🎹🎺🎻🥁📱📲☎📞📟📠🔋🔌💻🖥🖨⌨🖱🖲💽💾💿📀🎥🎞📽🎬📺📷📸📹📼🔍🔎🕯💡🔦🏮📔📕📖📗📘📙📚📓📒📃📜📄📰🗞📑🔖🏷💰💴💵💶💷💸💳🧾✉📧📨📩📤📥📦📫📪📬📭📮🗳✏✒🖋🖊🖌🖍📝💼📁📂🗂📅📆🗒🗓📇📈📉📊📋📌📍📎🖇📏📐✂🗃🗄🗑🔒🔓🔏🔐🔑🗝🔨⛏⚒🛠🗡⚔🔧🔩⚙🗜⚖🔗⛓🧰🧲⚗🧪🧫🧬🔬🔭📡💉🩸💊🩹🩺🚪🛏🛋🪑⚰⚱"
+  ascii:            #ASCII符号
+    type: SINGLE
+    name: ASCII
+    keys: "~`!@#$%^&*()-_=+[]{}\\|;:',.<>/?"
+  math:             #数学符号
+    type: SINGLE
+    name: 数学
+    keys: "≈＝≠≌<>≤≥≡()[]{}-+±×*/÷&∥%‰‱°′″∫∮∯∬∭∰∞∑∧∏∈∵∴⊥∝∨∪•√〒∝∽∈∩∧⊙⌒∥∟∣∂∆∞≌∉∪∨⊕⊿⊥∠∫∬∭"
+  cn:
+    type: SINGLE
+    name: 中文
+    keys:  #keys列表可以使用多种格式混合书写。
+      - ，
+      - 。
+      - ？
+      - ！
+      - ：
+      - 、
+      - “
+      - ”
+      - ‘
+      - ···
+      - ……
+      - { click: "-" }
+      - { click: "——", label: "破折" }
+      - { click: "" } # 内容为空可以强制令键盘从此处新起一行
+      - （
+      - ）
+      - 【
+      - 】
+      - 《
+      - 》
+      - ［
+      - ］
+      - ｛
+      - ｝
+      - 「
+      - 」
+      - 『
+      - 』
+      - ～
+  unit:
+    name: 单位
+    type: SINGLE
+    keys: "℃¥$€฿￡㎡m³℉￥£￠₠¹²³⁴⁵ⁿ⁶⁷⁸⁹⁰ˣ⁺⁻⁼⁽⁾½⅓¼⅔¾₁₂₃₄₅ₙ₆₇₈₉₀ₓ₊₋₌₍₎℅"
+  list:
+    name: 列表
+    type: SINGLE
+    keys: "①②③④⑤⑥⑦⑧⑨⑩⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩➊➋➌➍➎➏➐➑➒➓㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ"
+tool_bar:
+  button_spacing: 5 # 按钮间距
+  button_font: iconfont.ttf # 按钮字体
+  back_style: "ic@arrow-left" # 左侧返回按钮样式
+
+  # 左侧固定主按钮配置
+  primary_button:
+    # size: [120, 24]      # 视图组件整体宽高 (支持: -1: 填充(matchParent), -2: 自适应(wrapContent))
+    # 背景样式设置
+    background:
+      type: circle           # 高亮形状 (可选值: circle|rectangle)
+      corner_radius: 10      # 圆角半径
+      normal: 0x00        # 正常状态背景颜色
+      highlight: hilited_candidate_button_color  # 高亮状态背景色
+      vertical_inset: 4      # 垂直方向内缩量
+      horizontal_inset: 4    # 水平方向内缩量
+    # 前景内容设置
+    foreground:
+      style: "ic@dots_horizontal"         # 内置质感设计图标样式（以ic@开头）
+      normal: candidate_text_color  # 正常状态前景色 (本地图片不允许着色)
+      # highlight:        # 高亮状态前景色
+      padding: 10            # 前景内容与背景边界的内边距
+    # 按钮点击事件
+    action: menu_keyboard
+    long_press_action: Settings
+
+  hide_button: &hide_button
+    foreground:
+      style: "ic@keyboard_close"
+      normal: candidate_text_color
+    action: Hide
+
+  emoji_button: &emoji_button
+    foreground:
+      style: "ic@emoticon"
+    # 前景样式可以为空，使用默认样式，按钮将显示为 action 的 label
+    action: liquid_keyboard_emoji
+
+  clipboard_button: &clipboard_button
+    foreground:
+      style: "ic@clipboard"
+    action: clipboard_window
+
+  edit_button: &edit_button
+    foreground:
+      style: "ic@cursor_text"
+    action: Keyboard_editor
+
+  ascii_mode_button: &ascii_mode_button
+    foreground:
+      option_styles: ["中", "En"] # 样式也可以为表，将根据 action 的 toggle 决定
+      font_size: 18  # 按钮字体大小
+      padding: 10
+    action: Mode_switch
+
+  full_shape_button: &full_shape_button
+    foreground:
+      option_styles: ["ic@moon_full", "ic@moon_new"]
+    action: Zenkaku_Hankaku
+
+  # 右侧按钮列表（从右向左排列）
+  buttons: [ *hide_button, *emoji_button, *clipboard_button, *edit_button, *ascii_mode_button, *full_shape_button ]
+
+#键盘布局
+preset_keyboards:
+  default:
+    author: "Chh"
+    name: 中文布局
+    width: 10
+  #  height: 48
+    ascii_mode: 0
+    keys:
+      - {click: q, long_click: 1, swipe_down: 1, swipe_up: 1, key_back_color: bh1, key_text_color: th1, width: 10}
+      - {click: w, long_click: 2, swipe_down: 2, swipe_up: 2, key_back_color: bh1, key_text_color: th1}
+      - {click: e, long_click: 3, swipe_down: 3, swipe_up: 3, key_back_color: bh1, key_text_color: th1}
+      - {click: r, long_click: 4, swipe_down: 4, swipe_up: 4, key_back_color: bh1, key_text_color: th1}
+      - {click: t, long_click: 5, swipe_down: 5, swipe_up: 5, key_back_color: bh1, key_text_color: th1}
+      - {click: y, long_click: 6, swipe_down: 6, swipe_up: 6, key_back_color: bh1, key_text_color: th1}
+      - {click: u, long_click: 7, swipe_down: 7, swipe_up: 7, key_back_color: bh1, key_text_color: th1}
+      - {click: i, long_click: 8, swipe_down: 8, swipe_up: 8, key_back_color: bh1, key_text_color: th1}
+      - {click: o, long_click: 9, swipe_down: 9, swipe_up: 9, key_back_color: bh1, key_text_color: th1}
+      - {click: p, long_click: 0, swipe_down: 0, swipe_up: 0, key_back_color: bh1, key_text_color: th1}
+      - {width: 5, key_back_color: bh2, key_text_color: th2}
+      - {click: a, long_click: select_all, swipe_down: select_all, swipe_up: select_all, key_back_color: bh2, key_text_color: th2}
+      - {click: s, long_click: '@', swipe_down: '@', swipe_up: '@', key_back_color: bh2, key_text_color: th2}
+      - {click: d, long_click: '#', swipe_down: '#', swipe_up: '#', key_back_color: bh2, key_text_color: th2}
+      - {click: f, long_click: '$', swipe_down: '$', swipe_up: '$', key_back_color: bh2, key_text_color: th2}
+      - {click: g, long_click: '%', swipe_down: '%', swipe_up: '%', key_back_color: bh2, key_text_color: th2}
+      - {click: h, long_click: '!', swipe_down: '!', swipe_up: '!', key_back_color: bh2, key_text_color: th2}
+      - {click: j, long_click: '&', swipe_down: '&', swipe_up: '&', key_back_color: bh2, key_text_color: th2}
+      - {click: k, long_click: '*', swipe_down: '*', swipe_up: '*', key_back_color: bh2, key_text_color: th2}
+      - {click: l, long_click: '(){Left}', swipe_down: '(){Left}', swipe_up: '(){Left}', key_back_color: bh2, key_text_color: th2}
+      - {width: 5, key_back_color: bh2, key_text_color: th2}
+      - {click: Shift_L, label_symbol: ' ', long_click: Shift_L, double_click: Shift_L3, composing: delimiter, width: 15, hilited_key_back_color: benter, key_back_color: bbs, key_text_color: tbs}
+      - {click: z, long_click: '`', swipe_down: '`', swipe_up: '`', key_back_color: bh3, key_text_color: th3}
+      - {click: x, long_click: cut, swipe_down: cut, swipe_up: cut, key_back_color: bh3, key_text_color: th3}
+      - {click: c, long_click: copy, swipe_down: copy, swipe_up: copy, key_back_color: bh3, key_text_color: th3}
+      - {click: v, long_click: paste_clip, swipe_down: paste_clip, swipe_up: paste_clip, key_back_color: bh3, key_text_color: th3}
+      - {click: b, long_click: ';', swipe_down: ';', swipe_up: ';', key_back_color: bh3, key_text_color: th3}
+      - {click: n, long_click: ':', swipe_down: ':', swipe_up: ':', key_back_color: bh3, key_text_color: th3}
+      - {click: m, long_click: '?', swipe_down: '?', swipe_up: '?', key_back_color: bh3, key_text_color: th3}
+      - {click: BackSpace2, swipe_up: Clear, width: 15, key_back_color: bbs, key_text_color: tbs}
+      - {click: liquid_keyboard_switch, width: 12, key_text_size: 18, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_number, long_click: liquid_keyboard_emoji, width: 10, key_back_color: bgn, key_text_color: tgn, swipe_up: liquid_keyboard_emoji, swipe_down: liquid_keyboard_emoji}
+      - {long_click: '.', width: 8, key_back_color: bh4, key_text_color: th4, click: ',', swipe_up: '.', swipe_down: '.'}
+      - {click: space, long_click: Mode_switch, swipe_left: Left, swipe_right: Right, width: 40, key_back_color: bkg, key_text_color: tkg}
+      - {click: Mode_switch, width: 10, key_back_color: bgn, key_text_color: tgn, swipe_up: clipboard_window, swipe_down: clipboard_window, long_click: clipboard_window}
+      - {click: Return, popup: '["Settings"]', composing: Return1, swipe_up: Escape, width: 20, key_back_color: benter, key_text_color: tenter}
+
+  number:
+    author: "Chh"
+    name: 数字+
+  #  height: 48
+    ascii_mode: 1
+    keys:
+      - {click: '+', long_click: '#', swipe_down: '#', swipe_up: '#', width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: 1, width: 20}
+      - {click: 2, width: 20}
+      - {click: 3, width: 20}
+      - {click: BackSpace, swipe_up: Clear, width: 20, key_back_color: bbs, key_text_color: tbs}
+      - {click: '-', long_click: '%', swipe_down: '%', swipe_up: '%', width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: 4, width: 20}
+      - {click: 5, width: 20}
+      - {click: 6, width: 20}
+      - {click: Return, width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: '*', long_click: '±', swipe_down: '±', swipe_up: '±', width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: 7, width: 20}
+      - {click: 8, width: 20}
+      - {click: 9, width: 20}
+      - {click: '(){Left}', width: 20, key_text_color: th4}
+      - {click: '/', long_click: '\', swipe_down: '\', swipe_up: '\', width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_default, label: '返回', width: 20, key_back_color: benter, key_text_color: tenter}
+      - {click: 0, width: 20}
+      - {click: '.', long_click: liquid_keyboard_switch, swipe_down: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: '=', long_click: '≠', swipe_down: '≠', swipe_up: '≠', width: 20, key_back_color: bgn, key_text_color: tgn}
+      # 5列布局：运算符(20%) | 1(20%) | 2(20%) | 3(20%) | ⌫(20%)
+
+
+
+
+preset_keys:
+  # 基础编辑键
+  Shift_L: {label: Shift, preview: '⇪', functional: false, send: Shift_L}
+  Shift_L3: {label: Shift, preview: '⇪', functional: false, send: Shift_L, shift_lock: click}
+  Return: { label: enter_labels, preview: '↩', functional: false, send: Return }
+  Return1: {label: Enter, preview: '↩', functional: false, send: Return}
+  Return2: {label: 回车, send: Return }
+  Hide: {label: 隐藏, send: BACK}
+  BackSpace: {label: 退格, preview: '⇦', repeatable: true, functional: false, send: BackSpace}
+  BackSpace2: {label: 退格, preview: '⇦', repeatable: true, functional: false, slide_delete: true, send: BackSpace}
+  space: {repeatable: false, preview: ' ', functional: false, slide_cursor: true, label: '_______', send: space}
+  space1: {repeatable: false, label: '空格', functional: false, send: space}
+  Escape: {label: 取消, functional: false, send: Escape}
+  Clear: {label: 清空, functional: false, send: Escape}
+
+  # 光标与导航
+  Left: {label: '←', send: Left, repeatable: true, functional: false}
+  Right: {label: '→', send: Right, repeatable: true, functional: false}
+
+  # 剪贴板
+  select_all: {label: 全选, functional: false, send: Control+a}
+  cut: {label: 剪切, functional: false, send: Control+x}
+  copy: {label: 复制, functional: false, send: Control+c}
+  paste: {label: 粘贴, functional: false, send: Control+v}
+  paste_clip: {label: 粘贴, send: function, command: clipboard}
+
+  # 分词与字词选择
+  delimiter: {label: 分词, text: ''''}
+
+  # 键盘切换
+  Keyboard_default: { label: 中, functional: false, send: Eisu_toggle, select: .default }
+  Keyboard_number: { label: 123, functional: false, send: Eisu_toggle, select: number }
+  Keyboard_editor: { label: 编辑, functional: false, send: Eisu_toggle, select: number }
+  Keyboard_defaulten: { label: EN, functional: false, send: Mode_switch, select: letter }
+
+  # 悬浮键盘（liquid_keyboard）
+  liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"}  #退出liquidkeyboard
+  liquid_keyboard_switch: { label: 更多, send: function, command: liquid_keyboard, option: "ASCII" }
+  liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "更多" }
+  liquid_keyboard_emoji: { label: '☻', send: function, command: liquid_keyboard, option: "笑脸" }
+
+  # 菜单与工具
+  menu_keyboard: { label: 菜单, send: function, command: menu_keyboard }
+  clipboard_window: { label: "剪贴", send: function, command: "clipboard_window", option: '0' } #0剪贴板，1收藏夹
+  Menu: {label: 菜单, functional: false, send: Menu}
+
+  # Rime 输入状态
+  Mode_switch: {toggle: ascii_mode, functional: false, send: Mode_switch, states: [ 中文, 西文 ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+
+  # TRIME 系统设置
+  Schema_switchcn: {label: 中文, send: Control+Shift+6, functional: false}
+  Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
+  Color_switch: {label: 配色, functional: false, send: PROG_RED}
+  Settings: {label: 设置, functional: false, send: SETTINGS}
+
