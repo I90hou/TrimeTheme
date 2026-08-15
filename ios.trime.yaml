@@ -146,7 +146,7 @@ preset_color_schemes:
     preview_back_color: 0xff000000
     preview_text_color: 0xffFFFFFF
     shadow_color: 0x00000000
-    bgn: 0xffE5E5EA
+    bgn: 0xFFC6C6D0
     tgn: 0xff000000
     benter: 0xff007AFF
     tenter: 0xffFFFFFF
@@ -154,7 +154,7 @@ preset_color_schemes:
     tkg: 0xff000000
     baoe: 0xff007AFF
     taoe: 0xffFFFFFF
-    bbs: 0xffE5E5EA
+    bbs: 0xFFC6C6D0
     tbs: 0xff000000
     bh1: 0xffFFFFFF
     th1: 0xff000000
@@ -428,11 +428,11 @@ preset_keyboards:
       - {click: n, long_click: ':', swipe_down: ':', swipe_up: ':', key_back_color: bh3, key_text_color: th3}
       - {click: m, long_click: '?', swipe_down: '?', swipe_up: '?', key_back_color: bh3, key_text_color: th3}
       - {click: BackSpace2, swipe_up: Clear, width: 15, key_back_color: bbs, key_text_color: tbs}
-      - {click: liquid_keyboard_switch, width: 12, key_text_size: 18, key_back_color: bgn, key_text_color: tgn}
-      - {click: Keyboard_number, long_click: liquid_keyboard_emoji, width: 10, key_back_color: bgn, key_text_color: tgn, swipe_up: liquid_keyboard_emoji, swipe_down: liquid_keyboard_emoji}
-      - {long_click: '.', width: 8, key_back_color: bh4, key_text_color: th4, click: ',', swipe_up: '.', swipe_down: '.'}
-      - {click: space, long_click: Mode_switch, swipe_left: Left, swipe_right: Right, width: 40, key_back_color: bkg, key_text_color: tkg}
-      - {click: Mode_switch, width: 10, key_back_color: bgn, key_text_color: tgn, swipe_up: clipboard_window, swipe_down: clipboard_window, long_click: clipboard_window}
+      - {click: liquid_keyboard_switch, key_back_color: bgn, key_text_color: tgn, width: 15}
+      - {click: Keyboard_number, width: 10}
+      - {long_click: '.', key_back_color: bh4, key_text_color: th4, click: ',', swipe_up: '.', swipe_down: '.', width: 10}
+      - {click: space, long_click: Mode_switch, swipe_left: Left, swipe_right: Right, width: 30, key_back_color: bkg, key_text_color: tkg}
+      - {click: Mode_switch, width: 15, key_back_color: bkg, key_text_color: tkg}
       - {click: Return, popup: '["Settings"]', composing: Return1, swipe_up: Escape, width: 20, key_back_color: benter, key_text_color: tenter}
 
   number:
@@ -441,26 +441,26 @@ preset_keyboards:
   #  height: 48
     ascii_mode: 1
     keys:
-      - {click: '+', long_click: '#', swipe_down: '#', swipe_up: '#', width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: 1, width: 20}
-      - {click: 2, width: 20}
-      - {click: 3, width: 20}
-      - {click: BackSpace, swipe_up: Clear, width: 20, key_back_color: bbs, key_text_color: tbs}
-      - {click: '-', long_click: '%', swipe_down: '%', swipe_up: '%', width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: 4, width: 20}
-      - {click: 5, width: 20}
-      - {click: 6, width: 20}
-      - {click: Return, width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: '*', long_click: '±', swipe_down: '±', swipe_up: '±', width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: 7, width: 20}
-      - {click: 8, width: 20}
-      - {click: 9, width: 20}
-      - {click: '(){Left}', width: 20, key_text_color: th4}
-      - {click: '/', long_click: '\', swipe_down: '\', swipe_up: '\', width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: Keyboard_default, label: '返回', width: 20, key_back_color: benter, key_text_color: tenter}
-      - {click: 0, width: 20}
-      - {click: '.', long_click: liquid_keyboard_switch, swipe_down: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, width: 20, key_back_color: bgn, key_text_color: tgn}
-      - {click: '=', long_click: '≠', swipe_down: '≠', swipe_up: '≠', width: 20, key_back_color: bgn, key_text_color: tgn}
+      - {click: '*', long_click: '-', swipe_down: '-', swipe_up: '-', width: 17, key_back_color: bgn, key_text_color: tgn, label: '空格'}
+      - {click: 1, width: 22}
+      - {click: 2, width: 22}
+      - {click: 3, width: 22}
+      - {click: BackSpace, swipe_up: Clear, width: 17, key_back_color: bbs, key_text_color: tbs}
+      - {swipe_down: '/', width: 17, key_back_color: bgn, key_text_color: tgn, long_click: '/', swipe_up: '/', click: '*'}
+      - {click: 4, width: 22}
+      - {click: 5, width: 22}
+      - {click: 6, width: 22}
+      - {width: 17, key_back_color: bgn, key_text_color: tgn, click: space}
+      - {long_click: '(){Left}', swipe_down: '(){Left}', swipe_up: '(){Left}', width: 17, key_back_color: bgn, key_text_color: tgn, click: '%'}
+      - {click: 7, width: 22}
+      - {click: 8, width: 22}
+      - {click: 9, width: 22}
+      - {width: 17, key_back_color: bgn, key_text_color: tgn, click: Return}
+      - {click: liquid_keyboard_switch, width: 17, key_back_color: bgn, key_text_color: tgn, long_click: '-'}
+      - {click: Keyboard_default, label: '返回', width: 22, key_back_color: benter, key_text_color: tenter}
+      - {click: 0, width: 22}
+      - {click: '.', long_click: liquid_keyboard_switch, swipe_down: liquid_keyboard_switch, swipe_up: liquid_keyboard_switch, width: 22, key_back_color: bgn, key_text_color: tgn}
+      - {click: '=', long_click: '≠', swipe_down: '≠', swipe_up: '≠', width: 17, key_back_color: bgn, key_text_color: tgn}
       # 5列布局：运算符(20%) | 1(20%) | 2(20%) | 3(20%) | ⌫(20%)
 
 
